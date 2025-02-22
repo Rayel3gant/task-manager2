@@ -171,7 +171,6 @@ const TaskForm=()=> {
                        
                         disabled={(date) => date < new Date(new Date().toDateString())}
 
-                        initialFocus
                       />
                     </PopoverContent>
                   </Popover>

@@ -28,11 +28,11 @@ import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { cn } from '@/lib/utils'
-import { format } from "date-fns"
 import { Calendar } from './ui/calendar'
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { updateTaskAction } from '@/services/taskOperations'
 import { toast } from 'sonner'
+import { format } from 'date-fns'
 
 
 const formSchema = z.object({
@@ -133,10 +133,8 @@ const UpdateModal = ({_id, dueDate, status , setTaskUpdate}:{_id:string,dueDate:
                             <Calendar
                                 mode="single"
                                 selected={field.value ? new Date(field.value) : undefined}
-                                onSelect={field.onChange}
-                            
+                                onSelect={field.onChange}                           
                                 disabled={(date) => date < new Date(new Date().toDateString())}
-                                initialFocus
                             />
                             </PopoverContent>
                         </Popover>
